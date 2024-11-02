@@ -1,0 +1,17 @@
+<main class="main">
+  <h1>Hello World</h1>
+  <button (click)="switchComponent(1)" type="button">Exibir component 1</button>
+  <button (click)="switchComponent(2)" type="button">Exibir component 2</button>
+  <button (click)="switchComponent(3)" type="button">Exibir component 3</button>
+  <div>
+    <div *ngIf="currentComponent === 1">
+      <componente-1 />
+    </div>
+    <div *ngIf="currentComponent === 2">
+      <componente-2 />
+    </div>
+    <div *ngIf="currentComponent === 3">
+      <componente-3 />
+    </div>
+  </div>
+</main>
