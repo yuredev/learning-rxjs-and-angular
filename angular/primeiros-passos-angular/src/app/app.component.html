@@ -13,5 +13,25 @@
     <div *ngIf="currentComponent === 3">
       <componente-3 />
     </div>
+    @if (valor % 2 === 0) {
+    <h1>É par</h1>
+    } @else {
+    <h1>É impar</h1>
+    }
+  </div>
+  <!-- DATABINDING AS VEZES NÃO FUNCIONA, SEI LA POR QUE RAIOS, mas o angular recomenda usar o signals -->
+  <!-- O SIGNALS É UM WRAPPER AO REDOR DOS DADOS, ANTES DO SIGNALS USAVAM O Behavior Subject do RXJS -->
+  <div>
+    <h1>Teste de databinding</h1>
+    <button id="btn-count" type="button" (click)="alteraValor()">
+      {{ valor }}
+    </button>
+  </div>
+
+  <button type="button" (click)="fetchFotoCachorro()">
+    Buscar foto cachorro
+  </button>
+  <div>
+    <img [src]="urlFotoCachorro" alt="Foto cachorro" />
   </div>
 </main>
