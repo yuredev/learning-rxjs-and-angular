@@ -3,16 +3,18 @@ import { RouterOutlet } from '@angular/router';
 import { MaterialModule } from './Material/Material.module';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
+import { FormularioComponent } from './components/formulario/formulario.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MaterialModule],
+  imports: [RouterOutlet, MaterialModule, FormularioComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements AfterContentInit {
   title = 'projeto_angular_material';
+  taAbrido = true;
 
   @ViewChild(MatSidenav) sidneav?: MatSidenav;
 
@@ -27,9 +29,11 @@ export class AppComponent implements AfterContentInit {
         if (res.matches) {
           this.sidneav.mode = 'side';
           this.sidneav.close();
+          this.taAbrido = false;
         } else {
           this.sidneav.mode = 'push';
           this.sidneav.open();
+          this.taAbrido = true;
         }
       },
     });

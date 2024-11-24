@@ -1,0 +1,29 @@
+<h1>Inputs</h1>
+
+<div>
+  <h2>appearance="outline"</h2>
+  <mat-form-field>
+    <!-- Input com outline definido por padrão em Material.module.ts -->
+    <mat-label>Name</mat-label>
+    <input type="text" matInput placeholder="Name" />
+  </mat-form-field>
+</div>
+
+<div>
+  <h2>appearance="fill"</h2>
+  <!-- Input com fill (o fill definido sobrescreve o outline definido por padrão lá em Material.module.ts) -->
+  <mat-form-field appearance="fill">
+    <mat-label>Phone</mat-label>
+    <input type="text" matInput placeholder="Name" />
+  </mat-form-field>
+</div>
+
+<div>
+  <h2>Com hint</h2>
+  <mat-form-field>
+    <mat-label>Address</mat-label>
+    <!-- Tem como pegar o #email diretamente no template e usar seu valor no mat-hint -->
+    <input #email type="text" matInput placeholder="Name" [maxLength]="100" />
+    <mat-hint>{{email.value.length}}/100</mat-hint>
+  </mat-form-field>
+</div>

@@ -2,17 +2,27 @@
   <mat-sidenav
     #sidenav
     mode="push"
-    opened
     class="sidenav"
+    [opened]="taAbrido"
     [fixedInViewport]="true"
-  ></mat-sidenav>
+  >
+    <h1>Conteúdo dentro do sidenav</h1>
+    <mat-nav-list>
+      <a mat-list-item>Rota 1</a>
+      <a mat-list-item>Rota 2</a>
+      <a mat-list-item>Rota 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar>
+    <mat-toolbar color="primary">
       <button
         mat-icon-button
         class="example-icon"
         aria-label="Example icon-button with menu icon"
+        (click)="taAbrido = !taAbrido"
       >
+        <!-- Aqui pega o ícone "menu" do google icons -->
+        <!-- Se colocar o nome de outro ícone vai aparecer o outro ícone -->
         <mat-icon>menu</mat-icon>
       </button>
       <span>Flutter é melhor que Angular</span>
@@ -41,5 +51,7 @@
     <input title="Titulo" matSliderThumb value="1.5" />
   </mat-slider>
 </main>
+
+<app-formulario />
 
 <router-outlet />
